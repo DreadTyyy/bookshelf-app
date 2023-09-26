@@ -46,12 +46,12 @@ const addBook = () => {
 const generatedID = () => {
   return +new Date();
 };
-const generateBook = (id, titleBook, authorBook, yearBook, isCompleted) => {
+const generateBook = (id, titleBook, authorBook, year, isCompleted) => {
   return {
     id,
     titleBook,
     authorBook,
-    yearBook,
+    yearBook: parseInt(year),
     isCompleted,
   };
 };
