@@ -48,6 +48,10 @@ aside h2 {
   border-radius: 8px;
 }
 .add-header .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
   width: 50px;
   height: 50px;
   background-color: #000134;
@@ -128,6 +132,7 @@ main .container {
 .content {
   display: flex;
   margin-top: 1.5rem;
+  flex-wrap: wrap;
   gap: 1.2rem;
   align-items: flex-start;
   justify-content: space-between;
@@ -144,6 +149,7 @@ main .container {
 }
 .content .book {
   margin-right: auto;
+  width: 25rem;
 }
 .content .title {
   font-weight: 600;
@@ -174,12 +180,33 @@ main .container {
   cursor: pointer;
 }
 .content .check {
+  position: relative;
   color: #000134;
   border: 2px solid #000134;
   transition: 0.3s ease-in;
 }
 .content .check:hover {
   background-color: #000134;
+}
+.content .check:hover > .tooltip {
+  opacity: 100%;
+}
+.content .tooltip {
+  opacity: 0;
+  padding: 5px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -90%;
+  border-radius: 5px;
+  cursor: default;
+  width: 9rem;
+  background-color: rgb(226, 227, 255);
+  transition: 0.3s ease-in-out;
 }
 .content .check:hover > i {
   color: #ffffff;
@@ -192,4 +219,16 @@ main .container {
 }
 .content .delete:hover {
   background-color: rgb(123, 0, 0);
+}
+
+@media (max-width: 600px) {
+  .content {
+    justify-content: center;
+  }
+  .content .icon {
+    display: none;
+  }
+  .content .book {
+    width: fit-content;
+  }
 }

@@ -129,6 +129,10 @@ const makeNewBook = (book) => {
     check.addEventListener("click", () => {
       unCheckListBook(book.id);
     });
+    const tooltipCheck = document.createElement("div");
+    tooltipCheck.classList.add("tooltip");
+    tooltipCheck.innerText = "Tandai belum dibaca";
+    check.append(tooltipCheck);
 
     const deleteBtn = document.createElement("div");
     deleteBtn.classList.add("delete");
@@ -148,6 +152,10 @@ const makeNewBook = (book) => {
     check.addEventListener("click", () => {
       checkListBook(book.id);
     });
+    const tooltipCheck = document.createElement("div");
+    tooltipCheck.classList.add("tooltip");
+    tooltipCheck.innerText = "Tandai sudah dibaca";
+    check.append(tooltipCheck);
 
     const deleteBtn = document.createElement("div");
     deleteBtn.classList.add("delete");
